@@ -71,5 +71,5 @@ def find_dominant_colors(image_path, n_clusters=8):
 
     return rgb_colors, proportions
 
-#plot_image_in_lab("test.png")
+plot_image_in_lab("test.png")
 #find_dominant_colors("test.png")
