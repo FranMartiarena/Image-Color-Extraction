@@ -10,12 +10,24 @@ De ahi vino mi pregunta, cuales son dichos colores? o mas bien, cuales son los k
 ![Imagen de prueba](test.png "")  
 
 ## LAB
-| Colores | Colores k-mean |
-| :------: | ----: |
-| ![Imagen de prueba](colors_lab.png "")   | ![Imagen de prueba](clusters_lab.png "") |
+
+![Imagen de prueba](colors_lab.png "")
+![Imagen de prueba](clusters_lab.png "")
 
 
 ## RGB
-| Colores | Colores k-mean |
-| :------: | ----: |
-|   ![Imagen de prueba](colors_rgb.png "")   | ![Imagen de prueba](clusters_rgb.png "") |
+
+![Imagen de prueba](colors_rgb.png "")
+![Imagen de prueba](clusters_rgb.png "")
+
+## Naive Dithering
+
+Consiste en reemplazar cada color de la imagen por el mas cercano de nuestra paleta de colores (en este caso la obtenida con k-means)
+
+### Paleta LAB
+![Imagen de prueba](naive_dither_lab.png "")
+
+
+### Paleta RGB
+![Imagen de prueba](naive_dither_rgb.png "")
+
