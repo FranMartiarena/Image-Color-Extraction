@@ -5,6 +5,20 @@ from skimage.color import rgb2lab, lab2rgb
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
+def count_unique_colors(image_path):
+
+    # Cargar la imagen
+    img = Image.open(image_path).convert("RGB")  # Convertir a RGB si no está ya en ese formato
+    img_data = np.array(img)
+    
+    # Aplanar los píxeles en una lista de tuplas (r, g, b)
+    pixels = img_data.reshape(-1, img_data.shape[-1])
+    
+    # Usar un conjunto para encontrar colores únicos
+    unique_colors = set(tuple(pixel) for pixel in pixels)
+    print(unique_colors)
+    return len(unique_colors)
+
 def plot_image_in_lab(image_path):
     # Cargar la imagen
     img = Image.open(image_path).convert("RGB")
@@ -92,7 +106,7 @@ def find_dominant_colors_lab(image_path, n_clusters=8):
         startangle=90,
     )
     plt.axis("equal")  # Asegura que sea un círculo perfecto
-    #plt.show()
+    plt.show()
 
     return cluster_centers, proportions
 
@@ -127,7 +141,7 @@ def find_dominant_colors_rgb(image_path, n_clusters=8):
         startangle=90,
     )
     plt.axis("equal")  # Asegura que sea un círculo perfecto
-    #plt.show()
+    plt.show()
 
     return cluster_centers, proportions
 
@@ -199,8 +213,9 @@ def naive_dithering(image_path, palette, output_path="output_image.png", use_lab
     output_img.save(output_path)
 
 
-#plot_image_in_lab("test.png")
-#plot_image_in_rgb("test.png")
-#find_dominant_colors_lab("test.png")
-#find_dominant_colors_rgb("test.png")
-#naive_dithering("test.png", find_dominant_colors_lab("test.png")[0], use_lab=True)
+#plot_image_in_lab("data/test.png")
+#plot_image_in_rgb("data/test.png")
+#find_dominant_colors_lab("data/test.png")
+#find_dominant_colors_rgb("data/test.png")
+#naive_dithering("data/test.png", find_dominant_colors_rgb("data/test.png", 16)[0])
+print(count_unique_colors("data/test.png"))

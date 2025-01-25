@@ -1,4 +1,3 @@
-# Image-Color-Extraction
 
 Hace poco tuve las ganas de experimentar con algoritmos de [dithering](http://alex-charlton.com/posts/Dithering_on_the_GPU/) para imagenes. Siempre me meto de cabeza al tema pero me termino desviando, y esta no fue la excepcion.
 
@@ -30,4 +29,22 @@ Consiste en reemplazar cada color de la imagen por el mas cercano de nuestra pal
 
 ### Paleta RGB
 ![Imagen de prueba](data/naive_dither_rgb.png "")
+
+## Aumentando la cantidad de colores
+
+Los ejemplos anteriores eran usando la paleta de 8 colores, pero que pasa si usamos 16 colores? (Notemos que es todavia un numero muy bajito de colores, la imagen original tiene 322.015 colores distintos)
+
+### Paleta LAB 16 colores.
+![Imagen de prueba](data/clusters_lab_16.png "")
+
+| Original    | Dither |
+| -------- | ------- |
+| ![Imagen de prueba](data/test.png "")  | ![Imagen de prueba](data/naive_dither_lab_16.png "")    |
+
+### Paleta RGB 16 colores.
+![Imagen de prueba](data/clusters_rgb_16.png "")
+
+| Original    | Dither |
+| -------- | ------- |
+| ![Imagen de prueba](data/test.png "")  | ![Imagen de prueba](data/naive_dither_rgb_16.png "")   
 
