@@ -21,7 +21,7 @@ De ahi vino mi pregunta, cuales son dichos colores? o mas bien, cuales son los k
 
 ## Naive Dithering
 
-Consiste en reemplazar cada color de la imagen por el mas cercano de nuestra paleta de colores (en este caso la obtenida con k-means)
+Consiste en reemplazar cada color de la imagen por el mas cercano de nuestra paleta de colores (en este caso la obtenida con k-means). El output va a depender de nuestra funcion de cercania. En este caso usamos distancia euclideana sobre el espacio de color especifico. 
 
 ### Paleta LAB
 ![Imagen de prueba](data/naive_dither_lab.png "")
@@ -47,4 +47,3 @@ Los ejemplos anteriores eran usando la paleta de 8 colores, pero que pasa si usa
 | Original    | Dither |
 | -------- | ------- |
 | ![Imagen de prueba](data/test.png "")  | ![Imagen de prueba](data/naive_dither_rgb_16.png "")   
-
